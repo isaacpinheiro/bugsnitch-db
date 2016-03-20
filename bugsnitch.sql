@@ -31,6 +31,9 @@ create table registro(
 	id_registro serial,
 	data_hora timestamp not null,
 	resumo text not null,
+	prioridade varchar(50) not null,
+	severidade varchar(50) not null,
+	status boolean not null, -- true -> resolvido false -> não resolvido
 	id_usuario_projeto bigint unsigned not null,
 	constraint fk_registro_id_usuario_projeto foreign key (id_usuario_projeto) references usuario_projeto(id_usuario_projeto),
 	primary key(id_registro)
