@@ -39,14 +39,6 @@ create table registro(
 	primary key(id_registro)
 );
 
-create table anexo(
-	id_anexo serial,
-	arquivo text not null,
-	id_registro bigint unsigned not null,
-	constraint fk_anexo_id_registro foreign key (id_registro) references registro(id_registro),
-	primary key(id_anexo)
-);
-
 create table comentario(
 	id_comentario serial,
 	texto_comentario text not null,
@@ -56,5 +48,15 @@ create table comentario(
 	id_usuario_projeto bigint unsigned not null,
 	constraint fk_comentario_id_usuario_projeto foreign key (id_usuario_projeto) references usuario_projeto(id_usuario_projeto),
 	primary key(id_comentario)
+);
+
+create table anexo(
+	id_anexo serial,
+	arquivo text not null,
+	id_registro bigint unsigned not null,
+	constraint fk_anexo_id_registro foreign key (id_registro) references registro(id_registro),
+	id_comentario bigint unsigned,
+	constraint fk_anexo_id_comentario foreign key (id_comentario) references comentario(id_comentario),
+	primary key(id_anexo)
 );
 
