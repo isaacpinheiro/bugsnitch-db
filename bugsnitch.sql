@@ -3,6 +3,7 @@ use bugsnitch;
 
 create table usuario(
 	id_usuario serial,
+	nome varchar(60) not null,
 	email varchar(60) not null,
 	senha varchar(32) not null,
 	primary key(id_usuario)
