@@ -12,6 +12,7 @@ create table usuario(
 create table projeto(
 	id_projeto serial,
 	descricao varchar(140) not null,
+	area varchar(50) not null, -- backend, frontend, banco de dados, etc.
 	status varchar(12) not null, -- Em Andamento, Cancelado, Concluído
 	data_inicio timestamp not null,
 	data_fim timestamp,
