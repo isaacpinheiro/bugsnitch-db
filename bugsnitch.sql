@@ -62,3 +62,12 @@ create table anexo(
 	primary key(id_anexo)
 );
 
+create table contato(
+	id_contato serial,
+	nome varchar(100) not null,
+	telefone varchar(13),
+	email varchar(100),
+	mensagem text,
+	primary key(id_contato)
+);
+
